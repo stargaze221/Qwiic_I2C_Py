@@ -50,7 +50,7 @@ _retry_count = 3
 # Attempts to fail elegantly - often an issue with permissions with the I2C 
 # bus. Users of this system should be added to the system i2c group
 #
-def _connectToI2CBus(iBus=1, *args, **argk):
+def _connectToI2CBus(iBus=7, *args, **argk):
 
 	try:
 		import smbus2
@@ -102,7 +102,7 @@ class LinuxI2C(I2CDriver):
 	_i2cbus = None
 	_i2c_msg = None
 
-	def __init__(self, iBus=1, *args, **argk):
+	def __init__(self, iBus=7, *args, **argk):
 
 		# Call the super class. The super calss will use default values if not 
 		# proviced
@@ -279,7 +279,7 @@ class LinuxI2C(I2CDriver):
 		try:
 			# Try to write nothing to the device
 			# If it throws an I/O error - the device isn't connected
-			self._i2cbus.write_quick(devAddress)
+			self._i2cbus.write_byte(devAddress)
 			isConnected = True
 		except:
 			pass

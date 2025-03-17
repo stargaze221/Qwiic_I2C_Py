@@ -45,6 +45,12 @@ The SparkFun qwiic I2C module documentation is hosted at [ReadTheDocs](https://q
 
 The first step to using this package is installing it on your system. The install method depends on the python platform. The following sections outline installation on Python, MicroPython and CircuitPython.
 
+### Stargaze221
+I installed using the following command
+```sh
+Qwiic_I2C_Py$ pip3 install .
+```
+
 ### Python 
 
 #### PyPi Installation
